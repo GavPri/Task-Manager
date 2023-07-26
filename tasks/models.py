@@ -1,7 +1,8 @@
 from django.db import models
 
+
 # Create your models here.
-class Task(models.Model):
+class Tasks(models.Model):
     # User Selection Of Status
     STATUS_CHOICES = (
         ('todo', 'To Do'),

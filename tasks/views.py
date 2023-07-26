@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Task
+from .models import Tasks
 # Create your views here.
 
 
 def get_task_list(request):
-    tasks = Task.objects.all()
+    tasks = Tasks.objects.all()
     context = {
         'tasks': tasks
     }
