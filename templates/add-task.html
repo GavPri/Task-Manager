@@ -2,7 +2,7 @@
 
 {% block content %}
 <form action="add-task" method="POST">
-    {% csrf token %}
+    {% csrf_token %}
     <div>
         <fieldset>
             <label for="id_title">Title</label>
