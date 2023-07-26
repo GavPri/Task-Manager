@@ -2,3 +2,8 @@
     font-family: Roboto, sans-serif;
     letter-spacing: 0.5rem;
 }
+
+.hero{
+    height: 25vh;
+    width: 100vw;
+}
