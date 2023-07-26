@@ -14,7 +14,7 @@
         <p> {{ task.description }} </p>
         <p> {{ task.due_date}}</p>
         <p> This task is urgent! </p>
-        <a href="/edit/{{item.id}}">
+        <a href="/edit/{{ task.id }}">
             <button class="btn btn-secondary">Edit This Item</button>
         </a>
     </div>
@@ -24,7 +24,7 @@
         <p> {{ task.description }} </p>
         <p> {{ task.due_date}}</p>
         <p> This task is not urgent! </p>
-        <a href="/edit/{{item.id}}">
+        <a href="/edit/{{ task.id }}">
             <button class="btn btn-secondary">Edit This Item</button>
         </a>
     </div>

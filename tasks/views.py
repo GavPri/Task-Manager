@@ -27,5 +27,5 @@ def add_task(request):
     return render(request, 'add-task.html')
 
 
-def edit_task(request):
+def edit_task(request, task_id):
     return render(request, 'edit-task.html')
