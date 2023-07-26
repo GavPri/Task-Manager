@@ -1,3 +1,10 @@
+/* Classes That require centering */
+.task-container, .hero{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar-brand, h2, .hero-text{
     font-family: Roboto, sans-serif;
     letter-spacing: 0.5rem;
@@ -6,9 +13,6 @@
 .hero{
     height: 25vh;
     width: 100vw;
-    display:flex;
-    justify-content: center;
-    align-items: center;
     text-transform: uppercase;
 }
 
@@ -16,4 +20,14 @@
     border: 1px solid rgb(5, 240, 95);
     box-shadow: 3px 3px 3px rgb(35, 156, 5);
     text-transform: uppercase;
+}
+
+/* Task Container */
+.task-container{
+    width: 100vw;
+    height: fit-content;
+}
+
+.accordion{
+    width: 50%;
 }
