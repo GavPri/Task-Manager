@@ -14,7 +14,9 @@
         <p> {{ task.description }} </p>
         <p> {{ task.due_date}}</p>
         <p> This task is urgent! </p>
-        <button class="btn btn-secondary">Edit This Item</button>
+        <a href="/edit/{{item.id}}">
+            <button class="btn btn-secondary">Edit This Item</button>
+        </a>
     </div>
     {% else %}
     <div class="task">
@@ -22,7 +24,9 @@
         <p> {{ task.description }} </p>
         <p> {{ task.due_date}}</p>
         <p> This task is not urgent! </p>
-        <button class="btn btn-secondary">Edit This Item</button>
+        <a href="/edit/{{item.id}}">
+            <button class="btn btn-secondary">Edit This Item</button>
+        </a>
     </div>
     {% endif %}
     {% endfor %}

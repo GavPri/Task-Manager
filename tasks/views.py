@@ -25,3 +25,7 @@ def add_task(request):
 
         return redirect('home')
     return render(request, 'add-task.html')
+
+
+def edit_task(request):
+    return render(request, 'edit-task.html')
