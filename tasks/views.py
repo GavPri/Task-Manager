@@ -6,6 +6,6 @@ from .models import Task
 def get_task_list(request):
     tasks = Task.objects.all()
     context = {
-        'task': task
+        'tasks': tasks
     }
     return render(request, 'tasks.html', context)
