@@ -17,6 +17,9 @@
         <a href="/edit/{{ task.id }}">
             <button class="btn btn-secondary">Edit This Item</button>
         </a>
+        <a href="/toggle/{{ task.id }}">
+            <button class="btn btn-secondary">Change Urgency Status</button>
+        </a>
     </div>
     {% else %}
     <div class="task">
@@ -26,6 +29,9 @@
         <p> This task is not urgent! </p>
         <a href="/edit/{{ task.id }}">
             <button class="btn btn-secondary">Edit This Item</button>
+        </a>
+        <a href="/toggle/{{ task.id }}">
+            <button class="btn btn-secondary">Change Urgency Status</button>
         </a>
     </div>
     {% endif %}
