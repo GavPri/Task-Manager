@@ -2,26 +2,28 @@
 
 {% block content %}
 <section class="hero">
-<div class="hero-text"><h1>Manage Your Tasks</h1></div>
+    <div class="hero-text">
+        <h1>Manage Your Tasks</h1>
+    </div>
 </section class='hero'>
 <div class="task-container">
-{% for task in tasks %}
-{% if task.urgency == True %}
-<div class="task">
-    <h3> {{ task.title }}</h3>
-    <p> {{ task.description }} </p>
-    <p> {{ task.due_date}}</p>
-    <p> This task is urgent! </p>
+    {% for task in tasks %}
+    {% if task.urgency == True %}
+    <div class="task">
+        <h3> {{ task.title }}</h3>
+        <p> {{ task.description }} </p>
+        <p> {{ task.due_date}}</p>
+        <p> This task is urgent! </p>
+    </div>
+    {% else %}
+    <div class="task">
+        <h3> {{ task.title }}</h3>
+        <p> {{ task.description }} </p>
+        <p> {{ task.due_date}}</p>
+        <p> This task is not urgent! </p>
+    </div>
+    {% endif %}
+    {% endfor %}
 </div>
-{% else %}
-<div class="task">
-    <h3> {{ task.title }}</h3>
-    <p> {{ task.description }} </p>
-    <p> {{ task.due_date}}</p>
-    <p> This task is not urgent! </p>
-</div>
-{% endif %}
-{% endfor %}
-</div>
-
+<a href="/add"><button class="btn btn-success">Add A Task </button></a>
 {% endblock %}
