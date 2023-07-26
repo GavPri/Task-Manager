@@ -5,3 +5,5 @@ from django.contrib import messages
 
 # View to login user
 def login_user(request):
+    return render(request, 'login.html')
+
