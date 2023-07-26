@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Tasks
+from .forms import TaskForm
 # Create your views here.
 
 
@@ -13,17 +14,14 @@ def get_task_list(request):
 
 def add_task(request):
     if request.method == "POST":
-        title = request.POST.get('title')
-        description = request.POST.get('description')
-        due_date = request.POST.get('due_date')
-        urgency = 'urgency' in request.POST
-        Tasks.objects.create(
-            title=title,
-            description=description,
-            due_date=due_date,
-            urgency=urgency)
-
-        return redirect('home')
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    form = TaskForm()
+    context = {
+        'form': form
+    }
     return render(request, 'add-task.html')
 
 
