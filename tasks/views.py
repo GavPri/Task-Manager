@@ -27,5 +27,13 @@ def add_task(request):
 
 def edit_task(request, task_id):
     task = get_object_or_404(Tasks, id=task_id)
-    
-    return render(request, 'edit-task.html', {'task': task})
+    if request.method == "POST":
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    form = TaskForm(instance=task)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit-task.html', context)
