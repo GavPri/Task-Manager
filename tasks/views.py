@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Tasks
 # Create your views here.
 
@@ -28,4 +28,5 @@ def add_task(request):
 
 
 def edit_task(request, task_id):
+    Task = get_object_or_404(Task,id='task_id')
     return render(request, 'edit-task.html')
