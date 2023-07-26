@@ -22,9 +22,9 @@ urlpatterns = [
     path('', include('tasks.urls'), name=''),
     path('edit/<task_id>', edit_task, name='edit'),
     path('toggle/<task_id>', toggle_task, name='toggle'),
-    path('delete/<task_id>', delete_task, name='delete')
+    path('delete/<task_id>', delete_task, name='delete'),
     # Authentication Path
-    path('members/', include('django.contrib.auth.urls'))
+    path('members/', include('django.contrib.auth.urls')),
     # Members URL
     path('members/', include('members.urls'))
 ]
