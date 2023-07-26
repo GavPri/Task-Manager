@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-gavpri-taskmanager-c7vi1osiqyk.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['8000-gavpri-task-manager-1m8ch46al1.us2.codeanyapp.com']
 
 
 # Application definition

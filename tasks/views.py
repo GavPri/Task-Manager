@@ -28,5 +28,6 @@ def add_task(request):
 
 
 def edit_task(request, task_id):
-    Task = get_object_or_404(Task,id='task_id')
-    return render(request, 'edit-task.html')
+    task = get_object_or_404(Tasks, id=task_id)
+    
+    return render(request, 'edit-task.html', {'task': task})
