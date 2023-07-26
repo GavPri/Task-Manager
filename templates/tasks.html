@@ -7,22 +7,19 @@
 <div class="task-container">
 {% for task in tasks %}
 {% if task.urgency == True %}
-<div class="accordion accordion-flush is-urgent" id="accordionFlushExample">
-    <div class="accordion-item">
-        <h2 id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                {{task.title}} due on {{ task.due_date}}
-            </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">{{ task.description}}</div>
-        </div>
-    </div>
+<div class="task">
+    <h3> {{ task.title }}</h3>
+    <p> {{ task.description }} </p>
+    <p> {{ task.due_date}}</p>
+    <p> This task is urgent! </p>
 </div>
 {% else %}
-
+<div class="task">
+    <h3> {{ task.title }}</h3>
+    <p> {{ task.description }} </p>
+    <p> {{ task.due_date}}</p>
+    <p> This task is not urgent! </p>
+</div>
 {% endif %}
 {% endfor %}
 </div>
