@@ -22,6 +22,6 @@ def add_task(request):
             description=description,
             due_date=due_date,
             urgency=urgency)
-    
+
         return redirect('home')
     return render(request, 'add-task.html')
