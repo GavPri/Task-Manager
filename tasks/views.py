@@ -37,3 +37,15 @@ def edit_task(request, task_id):
         'form': form
     }
     return render(request, 'edit-task.html', context)
+
+
+def toggle_task(request, task_id):
+    task = get_object_or_404(Tasks, id=task_id)
+    task.urgency = not task.urgency
+    task.save()
+    return redirect('home')
+
+def delete_task(request, task_id):
+    task = get_object_or_404(Tasks, id=task_id)
+    task.delete()
+    return redirect('home')
