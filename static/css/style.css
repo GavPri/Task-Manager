@@ -27,6 +27,8 @@ form{
     justify-content: space-evenly;
     height: 40vh;
     width: 75vw;
+    border: 1px solid;
+    box-shadow: 1rem 1rem 5px;
 }
 
 .navbar-brand, h2, .hero-text{
