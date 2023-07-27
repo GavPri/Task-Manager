@@ -6,6 +6,11 @@
     </div>
 </section class='hero'>
 <section>
-    <h1> Login </h1>
+    <h1> Register An Account. </h1>
+    <form action="POST">
+        {% csrf_token %}
+
+        <input type="submit" value="Submit">
+    </form>
 </section>
 {% endblock %}
