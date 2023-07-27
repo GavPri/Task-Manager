@@ -42,6 +42,7 @@ form{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 0.5rem;
 }
 
 .navbar-brand, h2, .hero-text{

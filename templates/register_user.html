@@ -10,8 +10,10 @@
     <form method="POST">
     {% csrf_token %}
     {{ form.as_table }}
-
-    <input type="submit" value="Submit">
+    <div class="hide-forms-links">
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+    <!-- <input type="submit" value="Submit"> -->
     </form>
 </div>
 {% endblock %}
