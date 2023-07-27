@@ -30,6 +30,7 @@ def logout_user(request):
 
 # View To Create User
 def register_user(request):
+    form = UserCreationForm()
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -42,4 +43,5 @@ def register_user(request):
             return redirect('home')
         else:
             form = UserCreationForm
+
     return render(request, 'register_user.html', {'form': form})
