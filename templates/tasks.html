@@ -2,6 +2,9 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+<div class="add-task-container">
+    <a href="/add-task"><button class="btn btn-dark">Add A Task </button></a>
+</div>
 <div class="task-container">
     {% for task in tasks %}
     <div class="urgent-task">
@@ -15,18 +18,16 @@
     </div>
     {% else %}
 </div>
-<h5 class="card-title">{{ task.title }}</h5>
-<h6 class="card-subtitle mb-2 text-muted">{{ task.due_date }}</h6>
-<p class="card-text">{{ task.description }}</p>
-<p class="card-text">This Task Is Not Urgent</p>
-<a href="/delete/{{ task.id }}"><span class="badge badge-dark">Delete Task</span></span></a>
-<a href="/toggle/{{ task.id }}"><span class="badge badge-light">Toggle Urgency</span></a>
-</div>
+<div class="urgent-task">
+    <h5 class="card-title">{{ task.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ task.due_date }}</h6>
+    <p class="card-text">{{ task.description }}</p>
+    <p class="card-text">This Task Is Not Urgent</p>
+    <a href="/delete/{{ task.id }}"><span class="badge badge-dark">Delete Task</span></span></a>
+    <a href="/toggle/{{ task.id }}"><span class="badge badge-light">Toggle Urgency</span></a>
 </div>
 {% endif %}
 {% endfor %}
-
-<a href="/add-task"><button class="btn btn-success">Add A Task </button></a>
 {% else %}
 <div class="hide-forms-container">
     <div class="hide-forms">

@@ -1,5 +1,5 @@
 /* Classes That require centering */
-.task-container, .hero, .form-container, .hide-forms-container, .page-header{
+.hero, .form-container, .hide-forms-container, .page-header{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -58,16 +58,32 @@ form{
     text-transform: uppercase;
 }
 
-.is-urgent{
+/* container for the add task button */
+.add-task-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+/* .is-urgent{
     border: 1px solid rgb(5, 240, 95);
     box-shadow: 3px 3px 3px rgb(35, 156, 5);
     text-transform: uppercase;
-}
+} */
 
+.urgent-task{
+    margin-bottom: 2rem;
+    border: 1px solid black;
+    box-shadow: 1rem 0.5rem 3px black;
+    width: 65%;
+    padding: 1rem;
+}
 /* Task Container */
 .task-container{
-    width: 100vw;
+    width: 100%;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .accordion{
