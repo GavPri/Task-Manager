@@ -1,5 +1,5 @@
 /* Classes That require centering */
-.task-container, .hero, .form-container{
+.task-container, .hero, .form-container, .hide-forms-container{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,12 @@ form{
     box-shadow: 1rem 1rem 5px grey;
     border-radius: 5px;
 }
+
+/* Hide Forms */
+.hide-forms-container{
+    width: 100vw;
+}
+
 
 .hide-forms{
     display: flex;
