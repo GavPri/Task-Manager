@@ -30,4 +30,4 @@ def logout_user(request):
 
 # View To Create User
 def register_user(request):
-    return render(request, 'register_user.html' {})
+    return render(request, 'register_user.html', {})
