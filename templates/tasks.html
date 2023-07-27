@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero">
-    <div class="hero-text">
-        <h1>Manage Your Tasks</h1>
-    </div>
-</section class='hero'>
 <div class="task-container">
     {% for task in tasks %}
     {% if task.urgency == True %}
     <div class="task">
         <h3> {{ task.title }}</h3>
         <p> {{ task.description }} </p>
-        <p> {{ task.due_date}}</p>
+        <p> {{ task.due_date }}</p>
         <p> This task is urgent! </p>
         <a href="/edit/{{ task.id }}">
             <button class="btn btn-secondary">Edit This Item</button>
