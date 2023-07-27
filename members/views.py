@@ -20,6 +20,7 @@ def login_user(request):
     else:
         return render(request, 'login.html')
 
+
 # View to Logout User
 def logout_user(request):
     logout(request)
