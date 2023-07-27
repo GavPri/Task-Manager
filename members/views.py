@@ -43,5 +43,6 @@ def register_user(request):
             return redirect('home')
         else:
             form = UserCreationForm
+            messages.success(request, ("Registration Error, Try Again."))
 
     return render(request, 'register_user.html', {'form': form})
