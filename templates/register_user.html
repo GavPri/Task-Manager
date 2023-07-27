@@ -4,11 +4,12 @@
     {{message}}
 {% endfor%}
 <h1> Register An Account. </h1>
-<form method="POST">
+<div class="form-container">
+    <form method="POST">
     {% csrf_token %}
     {{ form.as_table }}
 
     <input type="submit" value="Submit">
-</form>
-
+    </form>
+</div>
 {% endblock %}

@@ -1,9 +1,17 @@
 /* Classes That require centering */
-.task-container, .hero{
+.task-container, .hero, .form-container{
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* Form Styling */
+form{
+    padding: 2rem;
+    border: 1px solid black;
+    box-shadow: 1rem 1rem 5px grey;
+    border-radius: 5px;
 }
 
 .navbar-brand, h2, .hero-text{
@@ -31,4 +39,10 @@
 
 .accordion{
     width: 50%;
+}
+
+/* Registration Form */
+.form-container{
+    width:100vw;
+    height:100vh
 }
