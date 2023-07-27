@@ -4,39 +4,27 @@
 {% if user.is_authenticated %}
 <div class="task-container">
     {% for task in tasks %}
-    {% if task.urgency == True %}
-    <div class="container urgent-task">
-        <div class="row">
-          <div class="col-sm-12 col-lg-6">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">{{ task.title }}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{ task.due_date }}</h6>
-                  <p class="card-text">{{ task.description }}</p>
-                  <p class="card-text">This Task Is Urgent</p>
-                  <a href="/delete/{{ task.id }}"></a><span class="badge badge-dark">Delete Task</span></span>
-                  <a href="/toggle/{{ task.id }}"><span class="badge badge-light">Toggle Urgency</span></a>
-                </div>
-              </div>
-          </div>
-      </div>
+    <div class="urgent-task">
+        {% if task.urgency == True %}
+        <h5 class="card-title">{{ task.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ task.due_date }}</h6>
+        <p class="card-text">{{ task.description }}</p>
+        <p class="card-text">This Task Is Urgent</p>
+        <a href="/delete/{{ task.id }}"><span class="badge badge-dark">Delete Task</span></span></a>
+        <a href="/toggle/{{ task.id }}"><span class="badge badge-light">Toggle Urgency</span></a>
     </div>
     {% else %}
-    <div class="task">
-        <h3> {{ task.title }}</h3>
-        <p> {{ task.description }} </p>
-        <p> {{ task.due_date}}</p>
-        <p> This task is not urgent! </p>
-        <a href="/edit/{{ task.id }}">
-            <button class="btn btn-secondary">Edit This Item</button>
-        </a>
-        <a href="/toggle/{{ task.id }}">
-            <button class="btn btn-secondary">Change Urgency Status</button>
-        </a>
-    </div>
-    {% endif %}
-    {% endfor %}
 </div>
+<h5 class="card-title">{{ task.title }}</h5>
+<h6 class="card-subtitle mb-2 text-muted">{{ task.due_date }}</h6>
+<p class="card-text">{{ task.description }}</p>
+<p class="card-text">This Task Is Not Urgent</p>
+<a href="/delete/{{ task.id }}"><span class="badge badge-dark">Delete Task</span></span></a>
+<a href="/toggle/{{ task.id }}"><span class="badge badge-light">Toggle Urgency</span></a>
+</div>
+</div>
+{% endif %}
+{% endfor %}
 
 <a href="/add-task"><button class="btn btn-success">Add A Task </button></a>
 {% else %}
