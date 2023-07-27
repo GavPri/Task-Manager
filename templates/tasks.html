@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="task-container">
     {% for task in tasks %}
     {% if task.urgency == True %}
@@ -35,5 +36,24 @@
     {% endif %}
     {% endfor %}
 </div>
+
 <a href="/add-task"><button class="btn btn-success">Add A Task </button></a>
+{% else %}
+<div class="hide-forms">
+    <div class="hide-forms-header">
+        <h2>You need to login to view tasks!</h2>
+    </div>
+    <div class="hide-forms-body">
+        Login to your account or register for an account today!
+    </div>
+    <div class="hide-forms-links">
+        <a href="/register_user">
+            <button class="btn btn btn-light"> Register Today </button>
+        </a>
+        <a href="/login">
+            <button class="btn btn btn-light"> Login </button>
+        </a>
+    </div>
+</div>
+{% endif %}
 {% endblock %}
