@@ -31,6 +31,12 @@ form{
     box-shadow: 1rem 1rem 5px;
 }
 
+.hide-forms-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .navbar-brand, h2, .hero-text{
     font-family: Roboto, sans-serif;
     letter-spacing: 0.5rem;
