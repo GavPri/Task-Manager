@@ -1,9 +1,15 @@
 /* Classes That require centering */
-.task-container, .hero, .form-container, .hide-forms-container{
+.task-container, .hero, .form-container, .hide-forms-container, .page-header{
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* Page Headers */
+.page-header{
+    width: 100vw;
+    margin-bottom:1rem;
 }
 
 /* Form Styling */
@@ -12,6 +18,7 @@ form{
     border: 1px solid black;
     box-shadow: 1rem 1rem 5px grey;
     border-radius: 5px;
+    margin-bottom:1rem;
 }
 
 /* Hide Forms */
@@ -67,5 +74,5 @@ form{
 /* Registration Form */
 .form-container{
     width:100vw;
-    height:100vh
+    height:auto;
 }

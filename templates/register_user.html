@@ -3,7 +3,9 @@
 {% for message in messages %}
     {{message}}
 {% endfor%}
-<h1> Register An Account. </h1>
+<div class="page-header">
+    <h2> Register An Account. </h2>
+</div>
 <div class="form-container">
     <form method="POST">
     {% csrf_token %}
