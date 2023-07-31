@@ -29,9 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-gavpri-task-manager-1m8ch46al1.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['8000-gavpri-taskmanager-c232q1t5a9v.ws-eu102.gitpod.io', 'task2manager.herokuapp.com', 'localhost']
 
 
 # Application definition
