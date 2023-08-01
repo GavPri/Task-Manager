@@ -1,108 +1,92 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Task Manager
 
-Welcome GavPri,
+Task Manager is a Django web application designed to help users manage their tasks efficiently. It allows users to create an account, log in, and add, edit, and delete tasks with full CRUD (Create, Read, Update, Delete) functionality. The application provides a user-friendly interface to manage tasks and keep track of their due dates and urgency status.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+##  Requirements:
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+- asgiref==3.7.2
+- cloudinary==1.33.0
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- Django==3.2.20
+- django-heroku==0.3.1
+- gunicorn==21.2.0
+- psycopg2==2.9.6
+- psycopg2-binary==2.9.6
+- sqlparse==0.4.4
+- urllib3==1.26.16
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Usage
 
-`python3 -m http.server`
+1. **Register User**: Users can register for an account to access the task management features.
 
-A blue button should appear to click: _Make Public_,
+2. **Login**: Registered users can log in to their accounts to view and manage their tasks.
 
-Another blue button should appear to click: _Open Browser_.
+3. **Home Page**: The home page displays a list of tasks for the logged-in user. If the user is not authenticated, it prompts them to log in or register to view tasks.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+4. **Add Task**: Users can click the "Add A Task" button on the home page to create a new task. The "Add Task" page provides fields to input the task's title, description, due date, and urgency status.
 
-A blue button should appear to click: _Make Public_,
+5. **Edit Task**: On the home page, users can click the "Edit" button next to each task to modify the task's details. The "Edit Task" page displays a form with fields to update the task's title, description, due date, and urgency status.
 
-Another blue button should appear to click: _Open Browser_.
+6. **Delete Task**: On the home page, users can click the "Delete" button next to each task to remove the task from their task list.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+7. **Task Urgency Toggle**: Users can toggle the urgency status of tasks (urgent/non-urgent) by clicking the "Toggle Urgency" button on the home page.
 
-To log into the Heroku toolbelt CLI:
+## Templates
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### base.html
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The `base.html` file is the base template used for rendering other HTML pages. The base.html file contains:
+- The head element to hold Google Fonts, Bootstrap and custom CSS styling.
+- The navigation bar. 
+    - The navigation bar will change depending on if the user is logged into the site.
+- The hero section. 
 
-------
+### add_task.html
 
-## Release History
+The `add_task.html` file is the homepage template that extends the `base.html` template.
+- This file allows users to create tasks through filling out a form. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### register_user.html
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The `register_user.html` file is the registration page template that extends the `base.html` template.
+- This file allows users to create a new account and login to the site and see the tasks.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### edit_task.html
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The `edit_task.html` file is the "Edit Task" page template that extends the `base.html` template.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### login.html
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+The `login.html` file is the "Login" page template that extends the `base.html` template. 
+- This file allows users to login to the site using their account credentials.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Libraries. 
+In this project I used:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Google Fonts. 
+Google Font's 'Roboto' is used throughout the project.
+- More information about google fonts is available here: https://fonts.google.com/
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Bootstrap.
+Bootstrap features such as a responsive navbar and button styling were used in this project. 
+- More information about Bootstrap is available here: https://getbootstrap.com/docs/5.3/getting-started/introduction/
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Credit 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Code Institutes 'Hello Django' 
+- Models and views from this walkthrough project were used in creating CRUD functionality. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Django Wednesdays
+- The code for: 
+    - user registration. 
+    - login / logout functionality. 
+    - styling Python's `{% form %}` through widgets. 
+Was found in the Django Wednesdays youtube playlist which is found here: https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+The videos which I am referring to in this playlist are linked here:
+- Login : https://www.youtube.com/watch?v=CTrVDi3tt8o&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=21
+- Logout : https://www.youtube.com/watch?v=BTq0MAIJEH8&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=22
+- Registering Users : https://www.youtube.com/watch?v=EqjRhO5CK6A&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=24
+- Styling Forms : https://www.youtube.com/watch?v=XapMxdIyLM8&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=26
